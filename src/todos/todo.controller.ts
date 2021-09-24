@@ -12,11 +12,11 @@ router.get('/', async (_: Request, res: Response) => {
 router.post('/', async (req: Request, res: Response) => {
   const newTodoDto: NewTodoDto = req.body
   const todoId = await addNewTodo(newTodoDto)
-  res.send({ todoId })
+  res.status(201).send({ todoId })
 })
 
 router.delete('/:todo_id', async (req: Request, res: Response) => {
   const todoId = +req.params.todo_id
   await deleteTodo(todoId)
-  res.send()
+  res.status(204).send()
 })

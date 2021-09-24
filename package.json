@@ -30,9 +30,12 @@
     "build": "tsc -p tsconfig.release.json",
     "build:watch": "tsc -w -p tsconfig.release.json",
     "lint": "eslint . --ext .ts,.tsx",
-    "test": "jest",
+    "test": "npm run docker-run && jest && npm run docker-stop-and-clear",
     "test:watch": "jest --watch",
-    "pretty": "prettier --write ."
+    "pretty": "prettier --write .",
+    "docker-build-and-run": "docker build -t my-postgres-db ./ && docker run -d --name my-postgresdb-container -p 5433:5432 my-postgres-db",
+    "docker-stop-and-clear": "(docker stop my-postgresdb-container || true) && (docker rm my-postgresdb-container || true)",
+    "docker-run": "npm run docker-stop-and-clear && npm run docker-build-and-run"
   },
   "dependencies": {
     "express": "^4.17.1",

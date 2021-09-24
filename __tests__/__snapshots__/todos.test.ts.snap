@@ -1,5 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`add a todo 1`] = `
+Array [
+  Object {
+    "desc": "mow the grass",
+    "id": 1,
+    "isComplete": false,
+  },
+  Object {
+    "desc": "take out the garbage",
+    "id": 2,
+    "isComplete": true,
+  },
+  Object {
+    "desc": "new todo",
+    "id": 3,
+    "isComplete": true,
+  },
+]
+`;
+
+exports[`delete a todo 1`] = `
+Array [
+  Object {
+    "desc": "take out the garbage",
+    "id": 2,
+    "isComplete": true,
+  },
+]
+`;
+
 exports[`get all todos 1`] = `
 Array [
   Object {
