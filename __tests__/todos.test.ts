@@ -1,6 +1,6 @@
 import supertest from 'supertest'
 import { app } from '../src/app'
-import { closeDb, pool } from '../src/db'
+import { pool } from '../src/db'
 import { TodoDto } from '../src/todos/todo.interface'
 
 const request = supertest(app)
@@ -44,7 +44,7 @@ beforeEach(async () => {
 })
 
 afterAll(() => {
-  closeDb()
+  pool.end()
 })
 
 test('get all todos', async () => {
