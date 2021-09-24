@@ -1,7 +1,7 @@
 import { Pool } from 'pg'
+import { env } from './environment'
 
-const connectionString =
-  'postgresql://postgres:postgres@localhost:5433/integration'
+const connectionString = env.connectionString
 
 export const pool = new Pool({ connectionString })
 
