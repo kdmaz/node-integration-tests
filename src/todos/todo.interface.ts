@@ -9,3 +9,7 @@ export interface TodoDto {
   desc: string
   isComplete: boolean
 }
+
+export type NewTodoEntity = Omit<TodoEntity, 'todo_id'>
+
+export type NewTodoDto = Omit<TodoDto, 'id'>
