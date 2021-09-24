@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`get all todos 1`] = `
+Array [
+  Object {
+    "desc": "mow the grass",
+    "id": 1,
+    "isComplete": false,
+  },
+  Object {
+    "desc": "take out the garbage",
+    "id": 2,
+    "isComplete": true,
+  },
+]
+`;
